@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>rock paper scissors game</title>
+  <script>
+    let playsession=0;
+    let compScore=0;
+    let myScore=0;
+
+    while (playsession <4){
+    //let user make their choice
+    
+    let myChoice= prompt("please make your choice")
+    alert("you have choosen" + " " +myChoice);
+
+    //Let computer make its choice
+    let myShows = ['rock', 'paper', 'scissors'];
+    let randomValue = myShows[Math.floor(Math.random() * myShows.length)];
+    alert("Computer chose: " +" " +randomValue)
+    
+    if (myChoice=="rock" && randomValue=="scissors") {
+   alert("You win!!" +myChoice +"crushes" +randomValue)
+   myScore++;
+    }else if (myChoice=="paper" && randomValue=="rock"){
+      alert("You win!!" +myChoice +"covers" +randomValue)
+      myScore++;
+    }else if (myChoice=="scissors" && randomValue=="paper"){
+      alert("You win!!" +myChoice +"cuts" +randomValue)
+      myScore++;
+    }else if(randomValue=="rock" && myChoice=="scissors") {
+   alert("Computer wins!!" +randomValue +"crushes" +myChoice)
+   compScore++;
+    }else if (randomValue=="paper" && myChoice=="rock"){
+      alert("Computer wins!!" +randomValue +"covers" +myChoice)
+      compScore++;
+    }else if (randomValue=="scissors" && myChoice=="paper"){
+      alert("Computer wins!!" +randomValue +"cuts" +myChoice)
+      compScore++;
+    }else {
+    alert("Draw. No winner!!")
+    }
+    playsession++
+}
+ if (compScore > myScore){
+   alert("Computer won!!")
+ }else if(myScore > compScore){
+   alert("You won!!")
+}else{
+  Alert("No winner" +" "+ "Draw!!")
+}
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
